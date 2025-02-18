@@ -45,7 +45,8 @@ mkdir -p "$VSCODE_CONFIG_DIR"
 cat > "$VSCODE_CONFIG_DIR/settings.json" << EOF
 {
     "workbench.colorTheme": "SynthWave '84",
-    "python.defaultInterpreterPath": "/bin/python"
+    "python.defaultInterpreterPath": "/bin/python",
+    "workbench.sideBar.location": "right"
 }
 EOF
 check_status "VSCode settings configuration"
