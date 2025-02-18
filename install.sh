@@ -2,7 +2,7 @@
 
 # Source common functions
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "${SCRIPT_DIR}/common.sh"
+source "${SCRIPT_DIR}/scripts/common.sh"
 
 # Available installation components
 COMPONENTS=(
@@ -32,7 +32,7 @@ print_usage() {
 # Install specific component
 install_component() {
   local component=$1
-  local script="${SCRIPT_DIR}/${component}.sh"
+  local script="${SCRIPT_DIR}/scripts/${component}.sh"
 
   if [ ! -f "$script" ]; then
     echo "Error: Installation script for $component not found"
