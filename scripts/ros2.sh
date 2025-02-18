@@ -51,6 +51,7 @@ echo "export _colcon_cd_root=/opt/ros/${ROS2_DISTRO}/" >>~/.bashrc
 if [ "$ROS2_DISTRO" = "humble" ]; then
   echo 'export TURTLEBOT3_MODEL=burger' >>~/.bashrc
   echo "export GAZEBO_MODEL_PATH=\$GAZEBO_MODEL_PATH:/opt/ros/${ROS2_DISTRO}/share/turtlebot3_gazebo/models" >>~/.bashrc
+  echo "source /usr/share/gazebo/setup.bash" >>~/.bashrc
 fi
 
 check_status "ROS2 environment configuration"
