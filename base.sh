@@ -9,7 +9,10 @@ echo "Starting base installation process..."
 # Update and install basic packages
 echo "Updating system and installing basic packages..."
 sudo apt update -y && sudo apt upgrade -y
-sudo apt install git curl wget python-is-python3 build-essential xclip -y
+sudo apt install git curl wget python-is-python3 build-essential xclip ssh -y
+sudo systemctl enable ssh
+sudo ufw allow ssh
+sudo ufw enable
 check_status "Basic package installation"
 
 # Install oh my bash with unattended flag
