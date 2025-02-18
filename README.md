@@ -22,8 +22,8 @@ Each script in the `scripts` directory is a self-contained module that can be ru
 Clone the repository and make the scripts executable:
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/Swepz/new_ubuntu_2404_Jazzy.git
+cd new_ubuntu_2404_Jazzy
 chmod +x install.sh scripts/*.sh
 ```
 
