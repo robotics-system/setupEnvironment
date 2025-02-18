@@ -49,7 +49,7 @@ echo "export _colcon_cd_root=/opt/ros/${ROS2_DISTRO}/" >>~/.bashrc
 
 # Add Turtlebot3 configurations
 if [ "$ROS2_DISTRO" = "humble" ]; then
-  echo 'export TURTLEBOT3_MODEL=waffle' >>~/.bashrc
+  echo 'export TURTLEBOT3_MODEL=burger' >>~/.bashrc
   echo "export GAZEBO_MODEL_PATH=\$GAZEBO_MODEL_PATH:/opt/ros/${ROS2_DISTRO}/share/turtlebot3_gazebo/models" >>~/.bashrc
 fi
 
