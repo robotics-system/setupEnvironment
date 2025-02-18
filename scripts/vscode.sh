@@ -36,7 +36,6 @@ code --install-extension ms-vscode.cpptools-themes
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension oderwat.indent-rainbow
 code --install-extension robbowen.synthwave-vscode
-code --install-extension twxs.cmake
 code --install-extension analytic-signal.preview-pdf
 check_status "VSCode extensions installation"
 
