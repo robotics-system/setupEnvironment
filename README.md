@@ -120,3 +120,5 @@ After installation, you can test your ROS2 environment with the Navigation2:
 source ~/.bashrc
 ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
 ```
+
+Note: Gazebo might be slow started first time because it needs to download models
