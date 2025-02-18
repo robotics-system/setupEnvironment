@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Source common functions
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/common.sh"
 
@@ -8,7 +7,6 @@ echo "Starting Visual Studio Code installation..."
 
 # Install VSCode
 echo "Installing Visual Studio Code..."
-# Download and import the Microsoft GPG key
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/packages.microsoft.gpg
 rm -f packages.microsoft.gpg
@@ -38,5 +36,18 @@ code --install-extension oderwat.indent-rainbow
 code --install-extension robbowen.synthwave-vscode
 code --install-extension analytic-signal.preview-pdf
 check_status "VSCode extensions installation"
+
+# Configure VSCode settings
+echo "Configuring VSCode settings..."
+VSCODE_CONFIG_DIR="/home/$USER/.config/Code/User"
+mkdir -p "$VSCODE_CONFIG_DIR"
+
+cat > "$VSCODE_CONFIG_DIR/settings.json" << EOF
+{
+    "workbench.colorTheme": "SynthWave '84",
+    "python.defaultInterpreterPath": "/bin/python"
+}
+EOF
+check_status "VSCode settings configuration"
 
 echo "Visual Studio Code installation completed successfully!"
