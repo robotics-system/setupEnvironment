@@ -12,8 +12,8 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install git curl wget python-is-python3 build-essential xclip ssh -y
 sudo systemctl enable ssh
 sudo ufw allow ssh
-sudo ufw allow in proto tcp from 192.169.1.0/24
-sudo ufw allow in proto udp from 192.169.1.0/24
+sudo ufw allow in proto tcp from 192.168.1.0/24
+sudo ufw allow in proto udp from 192.168.1.0/24
 sudo ufw enable
 check_status "Basic package installation"
 
