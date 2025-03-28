@@ -12,13 +12,25 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install git curl wget python-is-python3 build-essential xclip ssh -y
 sudo systemctl enable ssh
 sudo ufw allow ssh
+sudo ufw allow in proto tcp from 192.169.1.0/24
+sudo ufw allow in proto udp from 192.169.1.0/24
 sudo ufw enable
 check_status "Basic package installation"
 
-# Install oh my bash with unattended flag
+# Install oh my bash with unattended flag - with improved error handling
 echo "Installing Oh-My-Bash..."
+if [ -d "$HOME/.oh-my-bash" ]; then
+  echo "Removing existing Oh-My-Bash installation..."
+  rm -rf "$HOME/.oh-my-bash"
+fi
+
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" --unattended
-check_status "Installing Oh-My-Bash"
+if [ -d "$HOME/.oh-my-bash" ]; then
+  echo "✓ Oh-My-Bash installation completed successfully"
+else
+  echo "✗ Error during Oh-My-Bash installation"
+  exit 1
+fi
 
 # Install GitHub CLI
 echo "Installing GitHub CLI..."
