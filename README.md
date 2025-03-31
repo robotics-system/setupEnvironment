@@ -63,7 +63,7 @@ This setup script installs the following components:
 Clone the repository and make the scripts executable:
 ```bash
 git clone https://github.com/robotics-system/setupEnvironment.git
-cd ros2_ubuntu_setup
+cd setupEnvironment
 chmod +x install.sh scripts/*.sh
 ```
 
@@ -87,9 +87,9 @@ You can run the installation in several ways:
 ./install.sh --jazzy -c ros2     # Install ROS2 Jazzy
 
 # OPTIONAL: Standalone scripts
-./install.sh -c base    # Install base development tools
-./install.sh -c docker  # Install Docker
-./install.sh -c vscode  # Install VS Code
+./install.sh --humble -c base    # Install base development tools
+./install.sh --humble -c docker  # Install Docker
+./install.sh --humble -c vscode  # Install VS Code
 ```
 
 3. View available options:
