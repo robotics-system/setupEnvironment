@@ -62,7 +62,7 @@ This setup script installs the following components:
 ## Usage
 Clone the repository and make the scripts executable:
 ```bash
-git clone https://github.com/Swepz/ros2_ubuntu_setup.git
+git clone https://github.com/robotics-system/setupEnvironment.git
 cd ros2_ubuntu_setup
 chmod +x install.sh scripts/*.sh
 ```
